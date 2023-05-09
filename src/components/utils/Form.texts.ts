@@ -1,4 +1,6 @@
 const formTexts = {
+  title: "Food diary",
+  subTitle: "Add your favorites!",
   messageSuccessful: "Data has been sent",
   success: "success",
   error: "error",

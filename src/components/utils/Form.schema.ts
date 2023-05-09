@@ -6,7 +6,7 @@ const schema = yup.object().shape({
     .string()
     .required("Preparation time is required")
     .typeError("Please use HH:MM:SS format"),
-  dishType: yup.string().required().oneOf(["pizza", "soup", "sandwich"]),
+  dishType: yup.string().required().oneOf(["Pizza", "Soup", "Sandwich"]),
   noOfSlices: yup.number().typeError("Please enter a number of slices"),
   diameter: yup.number().typeError("Please enter a diameter"),
   slicesOfBread: yup.number().typeError("Please enter a number of slices"),

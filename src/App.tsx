@@ -1,6 +1,7 @@
 import * as React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { Form } from "./components/Form";
+import "./styles.css";
 
 export default function App() {
   return (
