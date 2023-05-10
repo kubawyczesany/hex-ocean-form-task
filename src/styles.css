@@ -143,6 +143,11 @@ body {
   color: #8d8d8d;
 }
 
+.text-success {
+  margin-top: 10px;
+  color: #fff !important;
+}
+
 @media only screen and (max-width: 600px) {
   .form-content .form-items {
     min-width: auto;
