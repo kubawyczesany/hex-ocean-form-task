@@ -58,8 +58,6 @@ export const Form = () => {
       .catch((err) => {
         setMessage(err.toString());
       });
-    console.log(message);
-    console.log(filteredData);
     reset();
   };
 

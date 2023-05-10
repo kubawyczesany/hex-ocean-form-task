@@ -11,7 +11,8 @@ body {
 
 html,
 body {
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
   background-color: #31a08f;
   overflow: hidden;
 }
@@ -140,4 +141,22 @@ body {
   border: 0;
   background-color: #ebeff8;
   color: #8d8d8d;
+}
+
+@media only screen and (max-width: 600px) {
+  .form-content .form-items {
+    min-width: auto;
+    padding: 20px;
+  }
+
+  .form-content input[type="text"],
+  .form-content input[type="password"],
+  .form-content input[type="email"],
+  .form-content select {
+    padding: 9px 10px;
+  }
+
+  .form-content textarea {
+    padding: 8px 10px;
+  }
 }
