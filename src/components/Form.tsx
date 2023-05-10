@@ -22,9 +22,9 @@ export const Form = () => {
   const [dishType, setSelectedDishType] = useState("");
   const dishTypes = [
     { id: 0, name: "Not selected" },
-    { id: 1, name: "Pizza" },
-    { id: 2, name: "Soup" },
-    { id: 3, name: "Sandwich" },
+    { id: 1, name: "pizza" },
+    { id: 2, name: "soup" },
+    { id: 3, name: "sandwich" },
   ];
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -58,8 +58,6 @@ export const Form = () => {
       .catch((err) => {
         setMessage(err.toString());
       });
-    // console.log left on purpose to show filteredData
-    console.log(filteredData);
     reset();
   };
 
@@ -79,12 +77,12 @@ export const Form = () => {
                   {formTexts.dishName}
                 </label>
                 <input
-                  {...register("dishName")}
+                  {...register("name")}
                   type="name"
                   className="form-control mt-0 mb-3"
                   id="dish-name"
                   placeholder="Dish name"
-                  name="dishName"
+                  name="name"
                 />
                 {errors.dishName && (
                   <p className="text-danger">{errors.dishName.message}</p>
@@ -95,13 +93,13 @@ export const Form = () => {
                   {formTexts.preparationTime}
                 </label>
                 <input
-                  {...register("preparationTime")}
+                  {...register("preparation_time")}
                   type="text"
                   pattern="\d{2}:\d{2}:\d{2}"
                   placeholder="00:00:00"
                   className="form-control mt-0 mb-3"
                   id="preparation-time"
-                  name="preparationTime"
+                  name="preparation_time"
                 />
                 {errors.preparationTime && (
                   <p className="text-danger">
@@ -114,16 +112,14 @@ export const Form = () => {
                   {formTexts.dishType}
                 </label>
                 <select
-                  {...register("dishType")}
+                  {...register("type")}
                   id="dish-type"
                   placeholder="Select type of dish"
                   className="form-control mb-3 mt-0"
-                  name="dishType"
+                  name="type"
                   onChange={(e) => handleChange(e)}
                 >
-                  <option disabled hidden>
-                    {formTexts.chooseDishType}
-                  </option>
+                  <option>{formTexts.chooseDishType}</option>
                   {dishTypes &&
                     dishTypes.map(({ id, name }) => (
                       <option key={id} value={name}>
@@ -132,19 +128,19 @@ export const Form = () => {
                     ))}
                 </select>
               </div>
-              {dishType === "Pizza" && (
+              {dishType === "pizza" && (
                 <>
                   <div className="col-md-12">
                     <label htmlFor="no-of-slices" className="form-label">
                       {formTexts.noOfSlices}
                     </label>
                     <input
-                      {...register("noOfSlices")}
+                      {...register("no_of_slices")}
                       type="number"
                       className="form-control mb-3"
                       id="no-of-slices"
                       placeholder="Number of slices"
-                      name="noOfSlices"
+                      name="no_of_slices"
                     />
                     {errors.noOfSlices && (
                       <p className="text-danger">{errors.noOfSlices.message}</p>
@@ -169,18 +165,18 @@ export const Form = () => {
                   </div>
                 </>
               )}
-              {dishType === "Soup" && (
+              {dishType === "soup" && (
                 <div className="col-md-12">
                   <label htmlFor="spiciness-scale" className="form-label">
                     {formTexts.spicinessScale}
                   </label>
                   <input
-                    {...register("spicinessScale")}
+                    {...register("spiciness_scale")}
                     type="number"
                     className="form-control"
                     id="spiciness-scale"
                     placeholder="Spiciness Scale (1-10)"
-                    name="spicinessScale"
+                    name="spiciness_scale"
                   />
                   {errors.spicinessScale && (
                     <p className="text-danger">
@@ -189,18 +185,18 @@ export const Form = () => {
                   )}
                 </div>
               )}
-              {dishType === "Sandwich" && (
+              {dishType === "sandwich" && (
                 <div className="col-md-12">
                   <label htmlFor="slices-of-bread" className="form-label">
                     {formTexts.slicesOfBread}
                   </label>
                   <input
-                    {...register("slicesOfBread")}
+                    {...register("slices_of_bread")}
                     type="number"
                     className="form-control"
                     id="slices-of-bread"
                     placeholder="Number of Slices of Bread"
-                    name="slicesOfBread"
+                    name="slices_of_bread"
                   />
                   {errors.slicesOfBread && (
                     <p className="text-danger">
